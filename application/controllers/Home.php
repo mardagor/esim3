@@ -17,8 +17,16 @@ public function kolmas() {
 		array("en"=>'Antti',"sn"=>'Virta'),
 		array("en"=>'Mikko',"sn"=>'Virta')
 		);
+	$data['user']="Olli";
+	$data['vuosi']=2016;
 
-	$this->load->view('home/kolmas');
+	$this->load->view('home/kolmas',$data);
+}
+
+public function neljas() {
+	$this->load->model('Home_model');
+	$data['sisalto']=$this->Home_model->getNames();
+	$this->load->view('home/neljas',$data);
 }
 
 }
